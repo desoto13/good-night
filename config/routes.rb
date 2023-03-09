@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
+ 
+  # Following and unfollowing a friend
+  post '/users/:user_id/follow', to: "users#follow", as: "follow_user"
+  post '/users/:user_id/unfollow', to: "users#unfollow", as: "unfollow_user"
 end
