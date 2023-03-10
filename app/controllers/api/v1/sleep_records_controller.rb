@@ -18,9 +18,6 @@ module Api
         
       end
 
-      def friends_record
-      end
-
       private
 
       def set_current_user

@@ -22,13 +22,17 @@ module Api
           render json: { error: "#{@current_user.name} is not following #{friend.name}" }, status: 401
         end
       end
+
+      def friends_record
+        @sleep_records = @current_user.friends_sleep_records.past_week.order("sleep_length DESC")
+      end
     
       private
     
       def set_current_user
         @current_user = User.find(params[:id])
       end
-      
+
     end
   end
 end
